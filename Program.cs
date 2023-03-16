@@ -39,7 +39,11 @@ namespace DiamanteDeX
                 }
                 else if (numeroImparDeLados % 2 == 0 && count < 3)
                 {
-                    Console.WriteLine("Número Inválido");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Número Inválido Detectado, informe um número impar!");
+                    Console.ReadKey();
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.White;
                     count = count + 1;
                 }
                 else if (count == 3)
