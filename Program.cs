@@ -8,28 +8,28 @@ namespace DiamanteDeX
         static void Main(string[] args)
         {
             int count = 0;
-            int n;
+            int numeroImparDeLados;
             while (count < 4)
             {
                 Console.WriteLine("Insira o número para fazer o diamante");
-                n = Convert.ToInt32(Console.ReadLine());
+                numeroImparDeLados = Convert.ToInt32(Console.ReadLine());
 
-                if (n % 2 != 0)
+                if (numeroImparDeLados % 2 != 0)
                 {
                     count = 3;
-                    int meio = n / 2;
-                    for (int i = 0; i < n; i++)
+                    int meio = numeroImparDeLados / 2;
+                    for (int i = 0; i < numeroImparDeLados; i++)
                     {
-                        int distancia = meio - i;
-                        if (distancia < 0)
+                        int distanciaDaBorda = meio - i;
+                        if (distanciaDaBorda < 0)
                         {
-                            distancia = -distancia;
+                            distanciaDaBorda = -distanciaDaBorda;
                         }
-                        for (int j = 0; j < distancia; j++)
+                        for (int j = 0; j < distanciaDaBorda; j++)
                         {
                             Console.Write(" ");
                         }
-                        for (int j = 0; j < n - 2 * distancia; j++)
+                        for (int j = 0; j < numeroImparDeLados - 2 * distanciaDaBorda; j++)
                         {
                             Console.Write("x");
                         }
@@ -37,7 +37,7 @@ namespace DiamanteDeX
                     }
                     break;
                 }
-                else if (n % 2 == 0 && count < 3)
+                else if (numeroImparDeLados % 2 == 0 && count < 3)
                 {
                     Console.WriteLine("Número Inválido");
                     count = count + 1;
