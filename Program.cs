@@ -11,7 +11,6 @@ namespace DiamanteDeX
             int n;
             while (count < 4)
             {
-
                 Console.WriteLine("Insira o número para fazer o diamante");
                 n = Convert.ToInt32(Console.ReadLine());
 
@@ -21,18 +20,22 @@ namespace DiamanteDeX
                     int meio = n / 2;
                     for (int i = 0; i < n; i++)
                     {
-                        for (int j = 0; j < Math.Abs(meio - i); j++)
+                        int distancia = meio - i;
+                        if (distancia < 0)
+                        {
+                            distancia = -distancia;
+                        }
+                        for (int j = 0; j < distancia; j++)
                         {
                             Console.Write(" ");
                         }
-                        for (int j = 0; j < n - 2 * Math.Abs(meio - i); j++)
+                        for (int j = 0; j < n - 2 * distancia; j++)
                         {
                             Console.Write("x");
                         }
                         Console.WriteLine();
-
                     }
-                break;
+                    break;
                 }
                 else if (n % 2 == 0 && count < 3)
                 {
@@ -45,7 +48,6 @@ namespace DiamanteDeX
                     Console.WriteLine("Máximo de Tentativas atingido, você retornará ao menu principal");
                     count = count + 1;
                 }
-
             }
         }
     }
