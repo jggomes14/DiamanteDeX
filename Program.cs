@@ -49,7 +49,9 @@ namespace DiamanteDeX
                 else if (count == 3)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Máximo de Tentativas atingido, você retornará ao menu principal");
+                    Console.WriteLine("Máximo de Tentativas atingido, a aplicação vai ser encerrada!");
+                    Console.ReadKey();
+                    Console.Clear();
                     count = count + 1;
                 }
             }
